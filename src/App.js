@@ -1,5 +1,7 @@
 import React from 'react';
 import SearchBox from './components/SearchBox';
+import LocationBox from './components/LocationBox';
+import WeatherBox from './components/WeatherBox';
 
 
 const api = {
@@ -13,6 +15,8 @@ function App() {
 		<div className="app warm">
 			<main>
 				<SearchBox />
+				<LocationBox />
+				<WeatherBox />
 			</main>
 		</div>
 	);
