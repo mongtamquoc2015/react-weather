@@ -19,14 +19,9 @@ export default function LocationBox(props) {
 	const _weather = props.weather;
 
 	return (
-		<div>
-		{/* Conditional rendering */}
-			{(typeof _weather.main != 'undefined') ? (
-				<div className="location-box">
-					<div className="location"> {_weather.name}, {_weather.sys.country} </div>
-					<div className="date"> {dateBuilder(new Date())} </div>
-				</div>
-			) : ('')}
+		<div className="location-box">
+			<div className="location"> {_weather.name}, {_weather.sys.country} </div>
+			<div className="date"> {dateBuilder(new Date())} </div>
 		</div>
 	);
 

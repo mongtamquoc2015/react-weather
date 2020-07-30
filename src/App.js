@@ -28,11 +28,19 @@ function App() {
 	}
 
 	return (
-		<div className="app warm">
+		<div className={
+			(typeof weather.main != 'undefined') ?
+				((weather.main.temp > 25) ?
+					'app warm' : 'app') :
+				'app'}>
 			<main>
 				<SearchBox setQuery={setQuery} query={query} search={search} />
-				<LocationBox weather={weather} />
-				<WeatherBox />
+				{(typeof weather.main !== 'undefined') ? (
+					<div>
+						<LocationBox weather={weather} />
+						<WeatherBox weather={weather} />
+					</div>
+				) : ('')}
 			</main>
 		</div>
 	);
